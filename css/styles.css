@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1,
+h2 {
+  font-family: Vina Sans, Arial, Helvetica, sans-serif;
+  letter-spacing: 30px;
+  font-weight: 100;
+}
+
+h3 {
+  color: white;
+  font-family: Roboto Slab, Arial, Helvetica, sans-serif;
+  font-weight: 200;
+}
+
+#cabecera {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#contenedor-img {
+  width: 100%;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.imagen {
+  width: 18%;
+  border: 4px solid black;
+  position: relative;
+  border-radius: 0.5rem;
+}
+
+.foto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#foto1 {
+  height: 15rem;
+  background-image: url(../imgs/foto1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#foto2 {
+  height: 15rem;
+  background-image: url(../imgs/foto2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#foto3 {
+  height: 15rem;
+  background-image: url(../imgs/foto3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+#foto4 {
+  height: 15rem;
+  background-image: url(../imgs/foto4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#foto5 {
+  height: 15rem;
+  background-image: url(../imgs/foto5.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#foto6 {
+  height: 15rem;
+  background-image: url(../imgs/foto6.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#foto7 {
+  height: 15rem;
+  background-image: url(../imgs/foto7.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#foto8 {
+  height: 15rem;
+  background-image: url(../imgs/foto8.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#foto9 {
+  height: 15rem;
+  background-image: url(../imgs/foto9.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#foto10 {
+  height: 15rem;
+  background-image: url(../imgs/foto10.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#foto11 {
+  height: 15rem;
+  background-image: url(../imgs/foto11.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#foto12 {
+  height: 15rem;
+  background-image: url(../imgs/foto12.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: 0 -200px;
+}
+
+#foto13 {
+    height: 15rem;
+    background-image: url(../imgs/foto13.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  #foto14 {
+    height: 15rem;
+    background-image: url(../imgs/foto14.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  #foto15 {
+    height: 15rem;
+    background-image: url(../imgs/foto15.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+.texto {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  text-align: center;
+}
+
+.imagen {
+  background-color: aqua;
+}
+
+.imagen:hover .texto {
+  visibility: visible;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+#final {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 620px) {
+  h1,
+  h2 {
+    width: 100%;
+  }
+
+  #contenedor-img {
+    flex-direction: column;
+  }
+
+  .imagen {
+    width: 70%;
+    border: 4px solid black;
+    position: relative;
+    border-radius: 0.5rem;
+  }
+
+  #final {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  #final > h2 {
+    letter-spacing: 0px;
+  }
+}
