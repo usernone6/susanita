@@ -35,6 +35,19 @@ h3 {
   flex-direction: column;
 }
 
+#navidad {
+  background-color: red;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+#navidad:hover {
+  background-color: rgb(255, 133, 133);
+  transition: 0.2s;
+}
+
 #contenedor-img {
   width: 100%;
   margin-top: 3rem;
@@ -156,28 +169,28 @@ h3 {
 }
 
 #foto13 {
-    height: 15rem;
-    background-image: url(../imgs/foto13.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
+  height: 15rem;
+  background-image: url(../imgs/foto13.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
-  #foto14 {
-    height: 15rem;
-    background-image: url(../imgs/foto14.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
+#foto14 {
+  height: 15rem;
+  background-image: url(../imgs/foto14.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
-  #foto15 {
-    height: 15rem;
-    background-image: url(../imgs/foto15.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
+#foto15 {
+  height: 15rem;
+  background-image: url(../imgs/foto15.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 .texto {
   width: 100%;
@@ -200,8 +213,8 @@ h3 {
 }
 
 #final {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 620px) {

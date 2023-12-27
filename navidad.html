@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feliz Navidad</title>
+    <link rel="stylesheet" href="css/styles-navidad.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+  </head>
+  <body>
+    <main class="main-container">
+      <div id="cabecera">
+        <h1>Has llegado a la galeria navideña JOU JOU JOU</h1>
+        <div>
+          <button id="iniciar">Iniciar</button>
+          <button id="pausar">Pausar</button>
+        </div>
+      </div>
+
+      <section class="container">
+        <div class="slider-wrapper">
+          <div class="slider">
+            <img id="slider-1" src="imgs/foto-n-1.jpg" alt="" />
+            <img id="slider-2" src="imgs/foto-n-2.jpg" alt="" />
+            <img id="slider-3" src="imgs/foto-n-3.jpg" alt="" />
+            <img id="slider-4" src="imgs/foto-n-4.jpg" alt="" />
+            <img id="slider-5" src="imgs/foto-n-5.jpg" alt="" />
+          </div>
+          <div class="slider-nav">
+            <a href="#slider-1"></a>
+            <a href="#slider-2"></a>
+            <a href="#slider-3"></a>
+            <a href="#slider-4"></a>
+            <a href="#slider-5"></a>
+          </div>
+        </div>
+      </section>
+
+      <div id="contenedor-img">
+        <div class="imagen">
+          <div id="foto1" class="foto">
+            <div class="texto">
+              <h3>Lujuria</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="imagen">
+          <div id="foto2" class="foto">
+            <div class="texto">
+              <h3>El puente de spiderman y mi MJ</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="imagen">
+          <div id="foto3" class="foto">
+            <div class="texto">
+              <h3>Toro Tocho</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="imagen">
+          <div id="foto4" class="foto">
+            <div class="texto">
+              <h3>Nuestra navidad</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="imagen">
+          <div id="foto5" class="foto">
+            <div class="texto">
+              <h3>Chocolate con Baileys 🤪</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="snow-floor"></div>
+
+    <script>
+      // Seleccionar el slider y los enlaces de navegación
+      const slider = document.querySelector(".slider");
+      const navLinks = document.querySelectorAll(".slider-nav a");
+
+      // Crear una variable para almacenar el índice de la imagen actual
+      let currentIndex = 0;
+
+      // Crear una función que cambie la imagen según el índice
+      function changeImage(index) {
+        // Remover la clase active de todos los enlaces de navegación
+        navLinks.forEach((link) => link.classList.remove("active"));
+        // Agregar la clase active al enlace correspondiente al índice
+        navLinks[index].classList.add("active");
+        // Cambiar el valor de la propiedad scrollLeft del slider según el índice
+        slider.scrollLeft = index * slider.offsetWidth;
+      }
+
+      // Crear una función que incremente el índice y lo reinicie si llega al final
+      function nextImage() {
+        currentIndex++;
+        if (currentIndex >= navLinks.length) {
+          currentIndex = 0;
+        }
+        changeImage(currentIndex);
+      }
+
+      // Crear una variable para almacenar el intervalo de tiempo entre imágenes
+      let interval = 5000; // 3 segundos
+
+      // Crear una variable para almacenar el temporizador que ejecuta la función nextImage cada intervalo
+      let timer = setInterval(nextImage, interval);
+
+      // Agregar un evento de click a cada enlace de navegación
+      navLinks.forEach((link, index) => {
+        link.addEventListener("click", () => {
+          // Cambiar la imagen según el índice del enlace
+          changeImage(index);
+          // Actualizar el valor de currentIndex
+          currentIndex = index;
+          // Reiniciar el temporizador
+          clearInterval(timer);
+          timer = setInterval(nextImage, interval);
+        });
+      });
+
+      const mainContainer = document.querySelector(".main-container");
+      const audio = new Audio("./assets/navidad.mp3");
+      audio.volume = 0.5;
+      audio.loop = true;
+      audio.controls = true;
+      audio.play();
+      iniciar.addEventListener("click", () => {
+        audio.play();
+      });
+
+      pausar.addEventListener("click", () => {
+        audio.pause();
+      });
+
+      const createSnow = (density) => {
+        for (let i = 0; i < density; i++) {
+          const snowFlake = document.createElement("span");
+          const horizontalPosition = `${getRandomValue(100)}%`;
+          const fallDelay = `${getRandomValue(100)}s`;
+          const fallDuration = `${getRandomValue(20, 5)}s`;
+          const flakeSize = `${getRandomValue(7, 1)}px`;
+          const flakeOpacity = Math.random().toFixed(2);
+
+          snowFlake.classList.add("snow");
+          snowFlake.style.opacity = flakeOpacity;
+          snowFlake.style.width = flakeSize;
+          snowFlake.style.height = flakeSize;
+          snowFlake.style.animation = `fall ${fallDuration} ${fallDelay} linear infinite`;
+          snowFlake.style.right = horizontalPosition;
+
+          mainContainer.appendChild(snowFlake);
+        }
+      };
+
+      const getRandomValue = (max, min = 1) => {
+        return Math.floor(Math.random() * max) + min;
+      };
+
+      createSnow(300);
+    </script>
+  </body>
+</html>
